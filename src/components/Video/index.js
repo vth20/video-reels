@@ -30,14 +30,14 @@ function VideoPlayer() {
 		const y = e.clientY;
 		const newElement = (
 			<div
-				key={elements.length}
+				key={x+y}
 				style={{ position: "absolute", top: y, left: x }}
 			>
-				<img alt="heart" className="hearts" src="https://res.cloudinary.com/vth20/image/upload/v1677776545/game/sutahiqpveogclmod0f9.gif" />
+				<img alt="heart" style={{width: "20px", height: "20px"}} className="hearts" src="https://res.cloudinary.com/vth20/image/upload/v1677776545/game/sutahiqpveogclmod0f9.gif" />
 			</div>
 		);
-		setElements([...elements, newElement]);
-		setTimeout(() => {
+		setElements([newElement]);
+		 setTimeout(() => {
 			setElements((elements) => elements.filter((element) => element !== newElement));
 		}, 1500);
 	}, []);
@@ -86,6 +86,7 @@ function VideoPlayer() {
 				onTimeUpdate={handleTimeUpdate}
 				style={{ width: "500px" }}
 				onClick={(e) => click(e)}
+				className="video"
 			// onDoubleClick={handleSendHeart}
 			/>
 			{/* <button onClick={togglePlay}>{isPlaying ? "Pause" : "Play"}</button> */}

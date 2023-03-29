@@ -1,7 +1,8 @@
 .hearts {
   display: block;
-  animation: Growing .8s linear;
+  animation: Growing .8s forwards;
   width: 60px;
+  -webkit-animation: Growing .8s forwards;
 }
 
 @keyframes Growing {
